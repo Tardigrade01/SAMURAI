@@ -1,49 +1,25 @@
 
-import numpy as np
-import librosa
-import librosa.display
-import scipy.signal as signal
-import matplotlib.pyplot as plt
+A machine learning-powered tool to sniff out track problems.
 
-# Load the audio file
-file_path = 'your_audio_file.wav'
-y, sr = librosa.load(file_path, sr=None)
+<h3>How it works:</h3>
 
-# Apply low-pass filter
-def low_pass_filter(y, sr, cutoff=1000, order=5):
-    nyquist = 0.5 * sr
-    normal_cutoff = cutoff / nyquist
-    b, a = signal.butter(order, normal_cutoff, btype='low', analog=False)
-    y_filtered = signal.filtfilt(b, a, y)
-    return y_filtered
+Listen up: We collect audio from trains chugging along the tracks.
+<br>Clean it up: We remove background noise to hear the tracks clearly.
+<br>Train the machine: Our AI learns to recognize the sound of healthy tracks vs. those with problems.
+<br>Detect defects: When we hear something fishy, we flag it as a potential issue.
+<p><h3> Why it matters:</h3>
 
-y_filtered = low_pass_filter(y, sr)
+Safer rides: Early detection helps prevent accidents.
+Save time and money: Less downtime for repairs means more trains running.
+Proactive maintenance: Keep tracks in top shape before they break down.
+Let's keep those trains rolling smoothly! 🚂🛤️<h1 align="center">Hi 👋, I'm Abhay Patel</h1>
+<h3 align="center">Coder with a tint of Designing Principals</h3>
 
-# Perform spectral subtraction
-def spectral_subtract(y, sr, noise_factor=0.5):
-    spec = librosa.stft(y)
-    mag, phase = librosa.magphase(spec)
-    noise_mag = np.mean(mag[:, :5], axis=1)
-    mag_sub = mag - noise_factor * noise_mag[:, np.newaxis]
-    mag_sub = np.maximum(mag_sub, 0)
-    y_denoised = librosa.istft(mag_sub * phase)
-    return y_denoised
+- 📫 How to reach me **abhay21patel@gmail.com**
 
-y_denoised = spectral_subtract(y_filtered, sr)
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+</p>
 
-# Save and display the results
-librosa.output.write_wav('denoised_audio.wav', y_denoised, sr)
-
-# Plot the waveforms
-plt.figure()
-plt.subplot(3, 1, 1)
-librosa.display.waveshow(y, sr=sr)
-plt.title('Original')
-plt.subplot(3, 1, 2)
-librosa.display.waveshow(y_filtered, sr=sr)
-plt.title('Low-pass Filtered')
-plt.subplot(3, 1, 3)
-librosa.display.waveshow(y_denoised, sr=sr)
-plt.title('Denoised')
-plt.tight_layout()
-plt.show()
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.adobe.com/in/products/illustrator.html" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg" alt="illustrator" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> </p>

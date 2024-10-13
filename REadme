@@ -1,18 +1,3 @@
-A machine learning-powered tool to sniff out track problems.
-
-How it works:
-
-Listen up: We collect audio from trains chugging along the tracks.
-Clean it up: We remove background noise to hear the tracks clearly.
-Train the machine: Our AI learns to recognize the sound of healthy tracks vs. those with problems.
-Detect defects: When we hear something fishy, we flag it as a potential issue.
-Why it matters:
-
-Safer rides: Early detection helps prevent accidents.
-Save time and money: Less downtime for repairs means more trains running.
-Proactive maintenance: Keep tracks in top shape before they break down.
-Let's keep those trains rolling smoothly! 🚂🛤️
-
 <h1 align="center">Hi 👋, I'm Abhay Patel</h1>
 <h3 align="center">Coder with a tint of Designing Principals</h3>
 
